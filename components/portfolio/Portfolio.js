@@ -7,11 +7,17 @@ import styles from '../../styles/globals'
 import Video from './Video'
 
 const Portfolio = () => {
-  const [visible, setVisible] = useState(true)
+  const [visible, setVisible] = useState(false)
+  const [videoObj, setVideoObj] = useState(null)
+
+  const handleClick = (obj) => {
+    setVisible(true)
+    setVideoObj(obj)
+  }
 
   return (
     <>
-      {visible && <Video setVisible={setVisible}/>}
+      {visible && <Video setVisible={setVisible} videoObj={videoObj}/>}
       <Container id='portfolio'>
         <styles.Header>
           Portfolio
@@ -20,8 +26,8 @@ const Portfolio = () => {
           <Box 
             background={'#40006B'}
             text='hover & click'
-            video={{
-              src: 'cellar-website.mp4',
+            handleClick={() => {
+              handleClick({ src: 'splitbill2.mp4', width: '20%' })
             }}
             content={
               <BoxHeader>
@@ -38,6 +44,9 @@ const Portfolio = () => {
           <Box 
             background={'#7A0011'}
             text='hover & click'
+            handleClick={() => {
+              handleClick({ src: 'cellar-website2.mp4', width: '70%' })
+            }}
             content={
               <Logo>
                 <Image loader={imageLoader} src={'logo-white.png'} layout='fill' alt='logo' />
@@ -51,7 +60,7 @@ const Portfolio = () => {
           </Box>
           <Box 
             background={'#191954'}
-            text='hover & click'
+            text='hover'
             content={
               <BoxHeader>
                 Arbitrage betting app

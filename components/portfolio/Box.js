@@ -9,6 +9,7 @@ const Box = (props) => {
       <Container
         onMouseOver={() => { setVisibe(true) }}
         onMouseOut={() => { setVisibe(false) }}
+        onClick={props.handleClick}
       >
         <Background background={props.background} visible={visible}>
           <div style={{ padding: 40 }}>

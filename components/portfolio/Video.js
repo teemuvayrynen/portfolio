@@ -5,27 +5,26 @@ import {
   faXmarkCircle
 } from '@fortawesome/free-solid-svg-icons'
 
-const Video = ({ setVisible }) => {
+const Video = ({ setVisible, videoObj }) => {
   
 
   return (
-    <Container>
-      <Box>
-        <Exit 
-          onClick={() => { setVisible(false) }}
-        >
-          <FontAwesomeIcon className='exit-icon'  icon={faXmarkCircle} />
-        </Exit>
-        <video 
-          loop muted className='video'
-          onMouseOver={e => e.target.play()}
-          onMouseOut={e => e.target.pause()}
-          
-        >
-          <source src='cellar-website.mp4' type="video/mp4" />
-        </video>
-      </Box>
-    </Container>
+    <>
+      {videoObj !== null && (
+        <Container>
+          <Box width={videoObj.width}>
+            <Exit 
+              onClick={() => { setVisible(false) }}
+            >
+              <FontAwesomeIcon className='exit-icon'  icon={faXmarkCircle} />
+            </Exit>
+            <video loop muted className='video' autoPlay style={{ margin: 20 }}>
+              <source src={videoObj.src} type="video/mp4" />
+            </video>
+          </Box>
+        </Container>
+      )}
+    </>
   )
 
 
@@ -49,8 +48,7 @@ const Box = styled.div`
   flex-direction: column;
   align-items: flex-end;
   position: relative;
-  width: 70%;
-  height: auto;
+  width: ${props => props.width};  
 `
 
 const Exit = styled.button`
