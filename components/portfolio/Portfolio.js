@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import Box from './Box'
 import Image from 'next/image'
 import imageLoader from '../../utils/imageLoader'
 import styles from '../../styles/globals'
+import Video from './Video'
 
 const Portfolio = () => {
+  const [visible, setVisible] = useState(true)
 
   return (
     <>
+      {visible && <Video setVisible={setVisible}/>}
       <Container id='portfolio'>
         <styles.Header>
           Portfolio
@@ -16,37 +19,39 @@ const Portfolio = () => {
         <Flex>
           <Box 
             background={'#40006B'}
+            text='hover & click'
+            video={{
+              src: 'cellar-website.mp4',
+            }}
             content={
               <BoxHeader>
-                Invoice calculator
+                Split bill
               </BoxHeader>
             }
           >
-            <video 
-              loop muted className='video'
-              onMouseOver={e => e.target.play()}
-              onMouseOut={e => e.target.pause()}
-            >
-              <source src='invoice-calculator.mp4' type="video/mp4" />
-            </video>
+            <Text>
+              IOS application built with SwiftUI. It allows user to split bill with another person by taking picture of the bill
+              and using vision api to gather bill data from the image. After processing and choosing which product belongs to who,
+              it calculates how much the person owns you.
+            </Text>
           </Box>
           <Box 
             background={'#7A0011'}
+            text='hover & click'
             content={
               <Logo>
                 <Image loader={imageLoader} src={'logo-white.png'} layout='fill' alt='logo' />
               </Logo>
            }>
-            <video 
-              loop muted className='video'
-              onMouseOver={e => e.target.play()}
-              onMouseOut={e => e.target.pause()}
-            >
-              <source src='cellar-website3.mp4' type="video/mp4" />
-            </video>
+            <Text>
+              Ethereum based NFT project developed by me. It included main and minting website both built with next.js and hosted
+              on AWS. It was a summer project with a start up company. Minting website used web3.js technology to connect
+              with the Ethereum blockchain.
+            </Text>
           </Box>
           <Box 
             background={'#191954'}
+            text='hover & click'
             content={
               <BoxHeader>
                 Arbitrage betting app
@@ -60,6 +65,7 @@ const Portfolio = () => {
           </Box>
           <Box 
             background={'#209C90'}
+            text='hover'
             content={
               <BoxHeader>
                 Guitar in blender
@@ -107,7 +113,7 @@ const BoxHeader = styled.div`
 
 const Text = styled.div`
   color: white;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   padding: 30px;
   line-height: 1.4;
 `

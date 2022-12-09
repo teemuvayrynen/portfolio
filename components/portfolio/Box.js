@@ -13,7 +13,7 @@ const Box = (props) => {
         <Background background={props.background} visible={visible}>
           <div style={{ padding: 40 }}>
             {props.content}
-            <div style={{ textAlign: 'center', color: 'rgb(120, 120, 120)', marginTop: 20 }}>Hover</div>
+            <div style={{ textAlign: 'center', color: 'rgb(120, 120, 120)', marginTop: 20 }}>{props.text}</div>
           </div>
         </Background>
         {props.children}

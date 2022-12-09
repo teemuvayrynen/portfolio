@@ -18,8 +18,11 @@ const About = () => {
 }
 
 const Container = styled.div`
+  position: relative;
   width: 100%;
   padding: 20px 0px;
+  background-color: rgb(25, 25, 25);
+  z-index: 1;
 `
 
 const Flex = styled.div`

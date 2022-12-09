@@ -34,7 +34,7 @@ const Container =  styled.div`
   padding-left: 30px;
   background: black;
   height: 80px;
-  z-index: 1;
+  z-index: 2;
   box-shadow: 0px 0px 10px black;
 `
 
