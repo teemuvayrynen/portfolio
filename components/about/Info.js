@@ -1,21 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import styled, { keyframes } from 'styled-components'
-import Bar from './Bar'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { 
-  faPerson, 
-  faCakeCandles, 
-  faEnvelope, 
-  faMobileScreen, 
-  faPassport,
-  faSchool,
-  faBuildingColumns
-} from '@fortawesome/free-solid-svg-icons'
+import styled from 'styled-components'
 import styles from '../../styles/globals'
 
 const Info = () => {
-  const [current, setCurrent] = useState(0)
-
 
   return (
     <>
@@ -23,69 +10,31 @@ const Info = () => {
         <styles.Header size={'2rem'}>
           About Me
         </styles.Header>
+        <SecondHeader>
+          22 years   <span style={{ color: 'grey' }}>/</span>   Student
+        </SecondHeader>
         <Text>
-          Highly motivated frontend and backend developer based in Finland. I enjoy developing
-          great user experiences using latest technologies with a pinch of style.
+          Junior full-stack web developer with a growth mindset and keen to learn new things.
+          {" Currently studying computer science at Aalto University for the third year. "}
+          I have a good experience using modern technologies to design and develop customer-centric
+          applications for all kinds of projects.
         </Text>
-        <Bar setCurrent={setCurrent} />
-        {(() => {
-          if (current == 0) {
-            return (
-              <Flex key={current}>
-                <Item>
-                  <FontAwesomeIcon className='about-icon' icon={faPerson} />
-                  Name          :     Teemu Väyrynen
-                </Item>
-                <Item>
-                  <FontAwesomeIcon className='about-icon' icon={faCakeCandles} />
-                  Age           :     22
-                </Item>
-                <Item>
-                  <FontAwesomeIcon className='about-icon' icon={faEnvelope} />
-                  Mail          :     test@test.fi
-                </Item>
-                <Item>
-                  <FontAwesomeIcon className='about-icon' icon={faMobileScreen} />
-                  Phone         :     +3584567890
-                </Item>
-                <Item>
-                  <FontAwesomeIcon className='about-icon' icon={faPassport} />
-                  Nationality   :     Finland
-                </Item>
-              </Flex>  
-            )
-          } else if (current == 1) {
-            return (
-              <Flex key={current}>
-                <Item>
-                  <FontAwesomeIcon className='about-icon' icon={faPerson} />
-                  Rolan Oy  :   Van driver and electric scooter charging
-                </Item>
-                <Item>
-                  <FontAwesomeIcon className='about-icon' icon={faCakeCandles} />
-                  Jespars Oy  :   Boat repairman and boat trailer driver
-                </Item>
-                <Item>
-                  <FontAwesomeIcon className='about-icon' icon={faCakeCandles} />
-                  Bronion Oy  :   Full Stack Developer
-                </Item>
-              </Flex>
-            )
-          } else if (current == 2) {
-            return (
-              <Flex key={current}>
-                <Item>
-                  <FontAwesomeIcon className='about-icon' icon={faSchool} />
-                  High school   :    Kauniaisten lukio
-                </Item>
-                <Item>
-                  <FontAwesomeIcon className='about-icon' icon={faBuildingColumns} />
-                  University    :    Aalto yliopisto Computer Science
-                </Item>
-              </Flex>
-            )
-          } else { null }
-        })()}
+        <SecondHeader>
+          Work experience:
+        </SecondHeader>
+        <ul>
+            <ListItem>Cellar64 start up</ListItem>
+            <ListItem>Bronion Oy</ListItem>
+        </ul>
+        <SecondHeader>
+          Skills:
+        </SecondHeader>
+        <ul>
+            <ListItem>Javascript, Python, Scala, Swift, C++</ListItem>
+            <ListItem>React, React Native, Next.js, Web3.js, Expo, Node.js</ListItem>
+            <ListItem>AWS, Firebase</ListItem>
+        </ul>
+        
       </Container>
     </>
   )
@@ -97,29 +46,25 @@ const Container = styled.ul`
   max-width: 500px;
 `
 
-const fade = keyframes`
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-`
-
 const Text = styled.div`
   color: white;
   font-weight: bold;
-  font-size: 0.9rem;
-  line-height: 1.6;
-`
-
-const Flex = styled.div`
-  display: flex;
-  flex-direction: column;
-  animation: 2s ${fade};
-`
-
-const Item = styled.pre`
-  color: white;
-  font-weight: bold;
   font-size: 1rem;
-  margin: 5px 0px;
+  line-height: 1.8;
+  margin-bottom: 16px
+`
+
+const SecondHeader = styled.div`
+  color: #006CFA;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+`
+
+const ListItem = styled.li`
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  padding-bottom: 10px;
 `
 
 export default Info
