@@ -122,7 +122,7 @@ const BoxHeader = styled.div`
 
 const Text = styled.div`
   color: white;
-  font-size: 1.3rem;
+  font-size: 18px;
   padding: 30px;
   line-height: 1.4;
 `

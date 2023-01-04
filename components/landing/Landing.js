@@ -8,15 +8,13 @@ import useWindowSize from '../../hooks/useWindowSize'
 const Landing = () => {
   const size = useWindowSize();
 
-
-
   return (
     <>
       <Container id='home'>
         <Header />
         <FlexBox>
           <Img width={size.width} className='bounce'>
-            <Image loader={imageLoader} src='animatedMe.png' layout='fill' alt='logo'/>
+            <Image loader={imageLoader} src={'animatedMe.png'} layout='fill' alt='animatedImage'/>
           </Img>
         </FlexBox>
       </Container>

@@ -5,7 +5,8 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en" className="notranslate" translate="no">
-        <Head></Head>
+        <Head>
+        </Head>
         <body>
           <Main />
           <NextScript />
