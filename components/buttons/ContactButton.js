@@ -6,7 +6,7 @@ const ContactButton = () => {
   return (
     <>
       <Container onClick={(e) => {
-        window.location.href = 'mailto:teemu@vayrynen.fi'
+        window.location.href = 'mailto:tv@teemu.fi'
       }}>
         Contact
       </Container>
