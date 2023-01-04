@@ -14,7 +14,7 @@ const Landing = () => {
         <Header />
         <FlexBox>
           <Img width={size.width} className='bounce'>
-            <Image loader={imageLoader} src={'animatedMe.png'} layout='fill' alt='animatedImage'/>
+            <Image loader={imageLoader} src={'ios-person.png'} layout='fill' alt='animatedImage'/>
           </Img>
         </FlexBox>
       </Container>
