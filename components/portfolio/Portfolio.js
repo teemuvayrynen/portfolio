@@ -54,7 +54,7 @@ const Portfolio = () => {
            }>
             <Text>
               Ethereum based NFT project developed by me. It included main and minting website both built with next.js and hosted
-              on AWS. It was a summer project with a start up company. Minting website used web3.js technology to connect
+              on AWS. It was a summer project with a small team from Aalto University. Minting website used web3.js technology to connect
               with the Ethereum blockchain.
             </Text>
           </Box>
