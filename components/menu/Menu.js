@@ -36,6 +36,9 @@ const Container =  styled.div`
   height: 80px;
   z-index: 2;
   box-shadow: 0px 0px 10px black;
+  @media (max-width: 550px) {
+    display: none;
+  }
 `
 
 const Element = styled.div`

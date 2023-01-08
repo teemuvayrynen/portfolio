@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import ContactButton from '../buttons/ContactButton'
 
 const Header = () => {
 
@@ -30,6 +29,7 @@ const Header = () => {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  padding-left: 20px;
 `
 
 const TextHeader = styled.h1`

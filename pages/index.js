@@ -4,6 +4,7 @@ import Menu from '../components/menu/Menu';
 import Portfolio from '../components/portfolio/Portfolio';
 import About from '../components/about/About';
 import Contact from '../components/contact/Contact';
+import SlideMenu from '../components/menu/SlideMenu';
 
 const App = () => {
 
@@ -12,6 +13,7 @@ const App = () => {
     <>
       <Container>
         <Menu />
+        <SlideMenu />
         <Landing />
         <About />
         <Portfolio />

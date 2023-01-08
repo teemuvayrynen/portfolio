@@ -41,10 +41,11 @@ const Info = () => {
   )
 }
 
-const Container = styled.ul`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 500px;
+  padding: 0px 20px;
 `
 
 const Text = styled.div`
