@@ -1,14 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import styled from 'styled-components'
 import Box from './Box'
 import Image from 'next/image'
 import imageLoader from '../../utils/imageLoader'
 import styles from '../../styles/globals'
 import Video from './Video'
+import useWindowSize from '../../hooks/useWindowSize'
 
 const Portfolio = () => {
   const [visible, setVisible] = useState(false)
   const [videoObj, setVideoObj] = useState(null)
+  const vidRef = useRef()
+  const size = useWindowSize()
 
   const handleClick = (obj) => {
     setVisible(true)
@@ -40,6 +43,9 @@ const Portfolio = () => {
               and using vision api to gather bill data from the image. After processing and choosing which product belongs to who,
               it calculates how much the person owns you.
             </Text>
+            <div style={{ color: 'gray', fontWeight: 'bold', display: size.width <= 550 ? 'block' : 'none' }}>
+              Click
+            </div>
           </Box>
           <Box 
             background={'#7A0011'}
@@ -57,6 +63,9 @@ const Portfolio = () => {
               on AWS. It was a summer project with a small team from Aalto University. Minting website used web3.js technology to connect
               with the Ethereum blockchain.
             </Text>
+            <div style={{ color: 'gray', fontWeight: 'bold', display: size.width <= 550 ? 'block' : 'none' }}>
+              Click
+            </div>
           </Box>
           <Box 
             background={'#191954'}
@@ -80,14 +89,17 @@ const Portfolio = () => {
                 Guitar in blender
               </BoxHeader>
             }
+            vidRef={vidRef}
           >
             <video 
               loop muted className='video'
               onMouseOver={e => e.target.play()}
               onMouseOut={e => e.target.pause()}
-            >
-              <source src='gitar2.mp4' type="video/mp4" />
-            </video>
+              playsInline
+              src='gitar2.mp4'
+              type="video/mp4"
+              ref={vidRef}
+            />
           </Box>
         </Flex>
       </Container>

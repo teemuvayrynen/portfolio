@@ -6,7 +6,9 @@ const ImageBox = () => {
   return (
     <>
       <Container>
-        
+        <div style={{ color: 'white', fontSize: 25, fontWeight: 'bold' }}>
+          Image coming soon!
+        </div>
       </Container>
     
     </>
@@ -14,11 +16,13 @@ const ImageBox = () => {
 }
 
 const Container = styled.div`
-  background: white;
+  background: rgb(10, 10, 10);
   width: 350px;
   height: 400px;
   border-radius: 20px;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 

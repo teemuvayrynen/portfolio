@@ -1,15 +1,37 @@
-import React, { useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import styled from 'styled-components'
+import useIntersection from '../../hooks/useIntersection'
+import useWindowSize from '../../hooks/useWindowSize'
 
 const Box = (props) => {
-  const [visible, setVisibe] = useState(false)
+  const [visible, setVisible] = useState(false)
+  const ref = useRef()
+  const inViewport = useIntersection(ref, '-200px')
+  const size = useWindowSize();
+
+  useEffect(() => {
+    if (inViewport && size.width <= 550) {
+      console.log("")
+      setVisible(true)
+      if (props.vidRef) {
+        //props.vidRef.current.play()
+      }
+    } else {
+      setVisible(false)
+      if (props.vidRef) {
+        //props.vidRef.current.pause()
+      }
+    }
+  }, [inViewport, size.width, props.vidRef])
+
 
   return (
     <>
       <Container
-        onMouseOver={() => { setVisibe(true) }}
-        onMouseOut={() => { setVisibe(false) }}
+        onMouseOver={() => { setVisible(true) }}
+        onMouseOut={() => { setVisible(false) }}
         onClick={props.handleClick}
+        ref={ref}
       >
         <Background background={props.background} visible={visible}>
           <div style={{ padding: 40 }}>
@@ -32,6 +54,7 @@ const Container = styled.div`
   cursor: pointer;
   transition: 500ms;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   box-shadow: 0px 0px 10px black;
