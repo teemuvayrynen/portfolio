@@ -78,7 +78,7 @@ const Portfolio = () => {
           >
             <Text>
               Webscraper built with node.js and docker to scrape bets from different betting sites. Goes through
-              all bets and tries to find arbitrage bets. Sends message to telegram when bet was found. 
+              all bets and tries to find arbitrage bets. Sends message to telegram when bet was found.
             </Text>
           </Box>
           <Box 
@@ -91,14 +91,27 @@ const Portfolio = () => {
             }
             vidRef={vidRef}
           >
-            <video 
+            {/* <video 
               loop muted className='video'
-              onMouseOver={e => e.target.play()}
-              onMouseOut={e => e.target.pause()}
+              autoPlay
               playsInline
               src='gitar2.mp4'
               type="video/mp4"
-              ref={vidRef}
+              
+            /> */}
+            <div className='video'
+              dangerouslySetInnerHTML={{
+                __html: `
+                <video 
+                  loop 
+                  muted 
+                  autoplay
+                  playsinline
+                  src="gitar.mp4"
+                  class="video"
+                />
+                `
+              }}
             />
           </Box>
         </Flex>
