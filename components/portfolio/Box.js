@@ -10,7 +10,6 @@ const Box = (props) => {
   const size = useWindowSize();
 
   useEffect(() => {
-    console.log(backVisible)
     if (inViewport && size.width <= 550) {
       setBackVisible(true)
       if (props.vidRef) {
