@@ -8,19 +8,19 @@ import Video from './Video'
 import useWindowSize from '../../hooks/useWindowSize'
 
 const Portfolio = () => {
-  const [visible, setVisible] = useState(false)
+  const [videoVisible, setVideoVisible] = useState(false)
   const [videoObj, setVideoObj] = useState(null)
   const vidRef = useRef()
   const size = useWindowSize()
 
   const handleClick = (obj) => {
-    setVisible(true)
+    setVideoVisible(true)
     setVideoObj(obj)
   }
 
   return (
     <>
-      {visible && <Video setVisible={setVisible} videoObj={videoObj}/>}
+      {videoVisible && <Video setVideoVisible={setVideoVisible} videoObj={videoObj}/>}
       <Container id='portfolio'>
         <styles.Header>
           Portfolio
@@ -43,7 +43,7 @@ const Portfolio = () => {
               and using vision api to gather bill data from the image. After processing and choosing which product belongs to who,
               it calculates how much the person owns you.
             </Text>
-            <div style={{ color: 'gray', fontWeight: 'bold', display: size.width <= 550 ? 'block' : 'none' }}>
+            <div style={{ color: 'rgb(150, 150, 150)', fontWeight: 'bold', display: size.width <= 550 ? 'block' : 'none', fontSize: 14 }}>
               Click
             </div>
           </Box>
@@ -63,7 +63,7 @@ const Portfolio = () => {
               on AWS. It was a summer project with a small team from Aalto University. Minting website used web3.js technology to connect
               with the Ethereum blockchain.
             </Text>
-            <div style={{ color: 'gray', fontWeight: 'bold', display: size.width <= 550 ? 'block' : 'none' }}>
+            <div style={{ color: 'rgb(150, 150, 150)', fontWeight: 'bold', display: size.width <= 550 ? 'block' : 'none', fontSize: 14 }}>
               Click
             </div>
           </Box>
@@ -134,7 +134,7 @@ const BoxHeader = styled.div`
 
 const Text = styled.div`
   color: white;
-  font-size: 18px;
+  font-size: 16px;
   padding: 30px;
   line-height: 1.4;
 `

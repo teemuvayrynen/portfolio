@@ -4,36 +4,36 @@ import useIntersection from '../../hooks/useIntersection'
 import useWindowSize from '../../hooks/useWindowSize'
 
 const Box = (props) => {
-  const [visible, setVisible] = useState(false)
+  const [backVisible, setBackVisible] = useState(false)
   const ref = useRef()
   const inViewport = useIntersection(ref, '-200px')
   const size = useWindowSize();
 
   useEffect(() => {
+    console.log(backVisible)
     if (inViewport && size.width <= 550) {
-      console.log("")
-      setVisible(true)
+      setBackVisible(true)
       if (props.vidRef) {
         //props.vidRef.current.play()
       }
-    } else {
-      setVisible(false)
+    } else if (!inViewport && size.width <= 550) {
+      setBackVisible(false)
       if (props.vidRef) {
         //props.vidRef.current.pause()
       }
     }
-  }, [inViewport, size.width, props.vidRef])
+  }, [inViewport, size.width, props.vidRef, backVisible])
 
 
   return (
     <>
       <Container
-        onMouseOver={() => { setVisible(true) }}
-        onMouseOut={() => { setVisible(false) }}
+        onMouseOver={() => { setBackVisible(true) }}
+        onMouseOut={() => { setBackVisible(false) }}
         onClick={props.handleClick}
         ref={ref}
       >
-        <Background background={props.background} visible={visible}>
+        <Background background={props.background} visible={backVisible}>
           <div style={{ padding: 40 }}>
             {props.content}
             <div style={{ textAlign: 'center', color: 'rgb(120, 120, 120)', marginTop: 20 }}>{props.text}</div>
@@ -57,6 +57,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: rgb(16, 16, 16);
   box-shadow: 0px 0px 10px black;
   &:hover {
     transform: scale(1.04)
@@ -78,6 +79,5 @@ const Background = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
 `
 export default Box

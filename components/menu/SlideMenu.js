@@ -64,7 +64,7 @@ const MenuContainer = styled.div`
   align-items: center;
   justify-content: center;
   left: ${props => props.visible ? '0px' : '-220px'};
-  transition: all 0.4s ease-in;
+  transition: all 0.2s ease-in;
 `
 
 const ButtonContainer = styled.div`

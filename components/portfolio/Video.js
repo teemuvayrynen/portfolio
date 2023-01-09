@@ -1,20 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { 
   faXmarkCircle
 } from '@fortawesome/free-solid-svg-icons'
 
-const Video = ({ setVisible, videoObj }) => {
-  
-
+const Video = ({ setVideoVisible, videoObj }) => {
   return (
     <>
       {videoObj !== null && (
         <Container>
           <Box width={videoObj.width}>
             <Exit 
-              onClick={() => { setVisible(false) }}
+              onClick={() => { setVideoVisible(false) }}
             >
               <FontAwesomeIcon className='exit-icon'  icon={faXmarkCircle} />
             </Exit>

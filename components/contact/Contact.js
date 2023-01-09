@@ -86,7 +86,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background: rgb(18, 18, 18);
+  background: rgb(16, 16, 16);
   clip-path: polygon(0 3%, 100% 0, 100% 100%, 0 100%);
 `
 
