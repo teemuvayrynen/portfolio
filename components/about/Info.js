@@ -23,7 +23,7 @@ const Info = () => {
           Work experience:
         </SecondHeader>
         <ul>
-            <ListItem>Cellar64 start up</ListItem>
+            <ListItem>Cellar64 project</ListItem>
             <ListItem>Bronion Oy</ListItem>
         </ul>
         <SecondHeader>
@@ -33,7 +33,7 @@ const Info = () => {
             <ListItem>Javascript, Python, Scala, Swift, C++</ListItem>
             <ListItem>React, React Native, Next.js, Web3.js, Expo, Node.js</ListItem>
             <ListItem>AWS, Firebase</ListItem>
-            <ListItem>Docker</ListItem>
+            <ListItem>Docker, MongoDB</ListItem>
         </ul>
         
       </Container>
