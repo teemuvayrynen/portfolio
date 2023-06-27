@@ -11,7 +11,7 @@ const Info = () => {
           About Me
         </styles.Header>
         <SecondHeader>
-          22 years   <span style={{ color: 'grey' }}>/</span>   Student
+          23 years   <span style={{ color: 'grey' }}>/</span>   Student
         </SecondHeader>
         <Text>
           Junior full-stack web developer with a growth mindset and keen to learn new things.

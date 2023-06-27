@@ -27,6 +27,20 @@ const Portfolio = () => {
         </styles.Header>
         <Flex>
           <Box 
+            background={'#00CDFF'}
+            text='hover'
+            content={
+              <BoxHeader>
+                Build home (Current project)
+              </BoxHeader>
+            }
+          >
+            <Text>
+              Web application built with Next.js where user can draw floor plans and user gets to know build costs and a lot more
+              at the drawing stage. Still in development. Drawing is made with konvajs.
+            </Text>
+          </Box>
+          <Box 
             background={'#40006B'}
             text='hover & click'
             handleClick={() => {
