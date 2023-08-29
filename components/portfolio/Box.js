@@ -11,17 +11,15 @@ const Box = (props) => {
 
   useEffect(() => {
     if (inViewport && size.width <= 550) {
-      setBackVisible(true)
-      if (props.vidRef) {
-        //props.vidRef.current.play()
+      if (!props.video) {
+        setBackVisible(true)
       }
     } else if (!inViewport && size.width <= 550) {
-      setBackVisible(false)
-      if (props.vidRef) {
-        //props.vidRef.current.pause()
+      if (!props.video) {
+        setBackVisible(false)
       }
     }
-  }, [inViewport, size.width, props.vidRef, backVisible])
+  }, [inViewport, size.width, backVisible])
 
 
   return (
@@ -35,7 +33,7 @@ const Box = (props) => {
         <Background background={props.background} visible={backVisible}>
           <div style={{ padding: 40 }}>
             {props.content}
-            <div style={{ textAlign: 'center', color: 'rgb(120, 120, 120)', marginTop: 20 }}>{props.text}</div>
+            <div style={{ textAlign: 'center', color: 'rgb(170, 170, 170)', marginTop: 20 }}>{props.text}</div>
           </div>
         </Background>
         {props.children}

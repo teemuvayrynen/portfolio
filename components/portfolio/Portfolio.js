@@ -10,7 +10,6 @@ import useWindowSize from '../../hooks/useWindowSize'
 const Portfolio = () => {
   const [videoVisible, setVideoVisible] = useState(false)
   const [videoObj, setVideoObj] = useState(null)
-  const vidRef = useRef()
   const size = useWindowSize()
 
   const handleClick = (obj) => {
@@ -29,6 +28,7 @@ const Portfolio = () => {
           <Box 
             background={'#00CDFF'}
             text='hover'
+            video={false}
             content={
               <BoxHeader>
                 Build home (Current project)
@@ -43,6 +43,7 @@ const Portfolio = () => {
           <Box 
             background={'#40006B'}
             text='hover & click'
+            video={false}
             handleClick={() => {
               handleClick({ src: 'splitbill2.mp4', width: '20%' })
             }}
@@ -64,6 +65,7 @@ const Portfolio = () => {
           <Box 
             background={'#7A0011'}
             text='hover & click'
+            video={false}
             handleClick={() => {
               handleClick({ src: 'cellar-website2.mp4', width: '70%' })
             }}
@@ -84,6 +86,7 @@ const Portfolio = () => {
           <Box 
             background={'#191954'}
             text='hover'
+            video={false}
             content={
               <BoxHeader>
                 Arbitrage betting app
@@ -96,24 +99,22 @@ const Portfolio = () => {
             </Text>
           </Box>
           <Box 
-            background={'#209C90'}
-            text='hover'
             content={
               <BoxHeader>
                 Guitar in blender
               </BoxHeader>
             }
-            vidRef={vidRef}
+            video={true}
           >
             <video 
-              loop muted className='video'
-              onMouseOver={e => e.target.play()}
-              onMouseOut={e => e.target.pause()}
+              loop 
+              muted 
+              className='video'
+              autoPlay
               playsInline
-              src='gitar.mp4'
-              type="video/mp4"
-              ref={vidRef}
-            />
+            >
+              <source src='gitar720.mp4' type="video/mp4"/>
+            </video>
           </Box>
         </Flex>
       </Container>

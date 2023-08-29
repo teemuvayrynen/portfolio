@@ -7,7 +7,7 @@ const ImageBox = () => {
     <>
       <Container>
         <div style={{ color: 'white', fontSize: 25, fontWeight: 'bold' }}>
-          Image coming soon!
+          {":)"}
         </div>
       </Container>
     

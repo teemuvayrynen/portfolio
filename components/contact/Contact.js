@@ -67,7 +67,7 @@ const Contact = () => {
                 as="textarea" 
                 className="form-textarea"/>
               <ErrorMessage name="msg" component="div" className="form-error" />
-              <LargeButton text="Coming soon!" type="submit" disabled={true} />
+              <LargeButton text="Coming soon! Or not" type="submit" disabled={true} />
               {success ? <Success>Message sent!</Success> : null}
             </Form>
           )}
