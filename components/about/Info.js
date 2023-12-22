@@ -15,7 +15,7 @@ const Info = () => {
         </SecondHeader>
         <Text>
           Junior full-stack web developer with a growth mindset and keen to learn new things.
-          {" Currently studying computer science at Aalto University for the third year. "}
+          {" Currently studying computer science at Aalto University for the fourth year. "}
           I have a good experience using modern technologies to design and develop customer-centric
           applications for all kinds of projects.
         </Text>
@@ -23,17 +23,18 @@ const Info = () => {
           Work experience:
         </SecondHeader>
         <ul>
-            <ListItem>Cellar64 project</ListItem>
-            <ListItem>Bronion Oy</ListItem>
+          <ListItem>Savox Communications Oy</ListItem>
+          <ListItem>Cellar64 project</ListItem>
+          <ListItem>Bronion Oy</ListItem>
         </ul>
         <SecondHeader>
           Skills:
         </SecondHeader>
         <ul>
-            <ListItem>Javascript, Python, Scala, Swift, C++</ListItem>
-            <ListItem>React, React Native, Next.js, Web3.js, Expo, Node.js</ListItem>
-            <ListItem>AWS, Firebase</ListItem>
-            <ListItem>Docker, MongoDB</ListItem>
+          <ListItem>Javascript, Typescript, Python, Swift, C++</ListItem>
+          <ListItem>React, React Native, Next.js, Web3.js, Expo, Node.js, </ListItem>
+          <ListItem>AWS, Firebase, Terraform</ListItem>
+          <ListItem>Docker, MongoDB</ListItem>
         </ul>
         
       </Container>
